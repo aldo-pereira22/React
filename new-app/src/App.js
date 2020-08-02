@@ -3,9 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  constructor(props){
+    super(props);
+    this.state = { 
+      showImage:false;
+    }
+  }
   return (
     <div className="App">
       <header className="App-header">
+        <button> Mostrar</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
