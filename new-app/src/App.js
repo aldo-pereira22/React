@@ -7,33 +7,39 @@ import './App.css';
 class App extends Component {
 
   constructor(props) {
-    super(props)
+
+    super(props);
     this.state = {
-      showImage:false
+      showImage: false,
     }
   }
 
+
   toggle = () => {
     this.setState({
-      showImage: !this.setState.showImage,
+      showImage: !this.state.showImage,
     })
   }
+
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <button type="button" onClick={this.toggle} > Mostrar</button>
-          {
-            this.state.img && (
-              <img src={logo} className="App-logo" alt="logo" />
-            )
-          }
+          <button type="button" onClick={this.toggle} >
+            {this.state.showImage ? 'Esconder' : 'Mostrar'}
+          </button>
 
-          <img src={logo} className="App-logo" alt="logo" />
+
+          {this.state.showImage && (
+              <img src={logo} className="App-logo" alt="logo" />
+            )}
+
+
+
           <p>
             Edit <code>src/App.js</code> and save to reload.
-          </p>
+            </p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -41,7 +47,7 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
+            </a>
         </header>
       </div>
     );
@@ -49,5 +55,6 @@ class App extends Component {
 
 
 }
+
 
 export default App;
