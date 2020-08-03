@@ -1,5 +1,7 @@
 import React from 'react';
 import PromotionCard from 'components/promotion/card/Card'; 
+import axios from 'axios'
+import React, { useEffect } from 'react'
 
 const promotion = { 
     "id": 1,
@@ -17,6 +19,15 @@ const promotion = {
 
 
 const PagesPromotionSearch = () => {
+
+  useEffect(() => {
+    
+  })
+  axios.get('http://localhost:5000/promotions?_embed=comments')
+    .then( (response) => {
+        console.log(response.data);
+    } )
+
     return(
         <div
          style={{ 
