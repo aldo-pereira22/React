@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import PromotionCard from 'components/promotion/card/Card';
+import PromotionList from 'components/promotion/List/List';
+     
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import './Search.css'
@@ -9,11 +10,17 @@ const PromotionSearch = () => {
 
     const [promotions, setPromotions] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/promotions?_embed=comments')
+
+        const params = { };
+        if(search) {
+            params.title_like = search;
+        }
+
+        axios.get('http://localhost:5000/promotions?_embed=comments', { params } )
             .then((response) => {
                 setPromotions(response.data)
             })
-    }, []);
+    }, [search]);
 
 
     return (
@@ -28,12 +35,9 @@ const PromotionSearch = () => {
                 onChange={(ev) => setSearch(ev.target.value) }
             />
 
+            <PromotionList promotions= {promotions} loading={!promotions.length} />
 
-            {promotions.map((promotion) => (
-                <PromotionCard promotion={promotion} />
-                // <PromotionCard promotion={promotion} />
-            ))}
-        </div>
+            </div>
     )
 
 }
