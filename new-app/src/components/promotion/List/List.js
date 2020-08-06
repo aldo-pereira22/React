@@ -13,7 +13,6 @@ const PromotionList = ({ loading, promotions }) => {
         <div className="promotion-list" >
             { promotions.map((promotion) => (
                 <PromotionCard promotion={promotion} />
-                // <PromotionCard promotion={promotion} />
             ))}
         </div>
     )
