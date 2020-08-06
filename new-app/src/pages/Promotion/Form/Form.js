@@ -4,7 +4,7 @@ import PromotionForm from 'components/promotion/Form/Form'
 import UIContainer from 'components/UI/Container/Container';
 
 const PagesPromotionForm = () => {
-    const { id } =useParams();
+    // const { id } = useParams();
     return (
         <UIContainer >
             <PromotionForm />

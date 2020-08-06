@@ -12,17 +12,27 @@ const initialValue = {
 }
 
 const PromotionForm = () => {
-     
     const [values, setValues] = useState(initialValue);
     const history = useHistory();
-
-    function onChange(ev){
-        const {name, value} = ev.target
-        console.log({name, value})
-
-        setValues =( {...values, [name]:value })
-
+  
+    function onChange(ev) {
+      const { name, value } = ev.target;
+  
+      setValues({ ...values, [name]: value });
     }
+
+// const PromotionForm = () => {
+     
+//     const [values, setValues] = useState(initialValue);
+//     const history = useHistory();
+
+//     function onChange(ev){
+//         const {name, value} = ev.target
+//         console.log({name, value})
+
+//         setValues =( {...values, [name]:value })
+
+//     }
 
     function onSubmit(ev){
         ev.preventDefault();
