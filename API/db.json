@@ -73,6 +73,33 @@
       "promotionId": 7,
       "comment": "Novo teste",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "Hey Ho",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "Teste Aldo",
+      "parentId": 3,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "Sub Resposta",
+      "parentId": 6,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "Nova resposta",
+      "parentId": 1,
+      "id": 8
     }
   ],
   "users": [
